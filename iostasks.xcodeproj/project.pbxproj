@@ -15,6 +15,8 @@
 		C4DAC7CC24BE105B00A389D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DAC7CA24BE105B00A389D6 /* LaunchScreen.storyboard */; };
 		C4DAC7D724BE105B00A389D6 /* iostasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAC7D624BE105B00A389D6 /* iostasksTests.swift */; };
 		C4DAC7E224BE105B00A389D6 /* iostasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAC7E124BE105B00A389D6 /* iostasksUITests.swift */; };
+		C4DAC7F024BE172F00A389D6 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAC7EF24BE172F00A389D6 /* EntryViewController.swift */; };
+		C4DAC7F224BE174300A389D6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAC7F124BE174300A389D6 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		C4DAC7DD24BE105B00A389D6 /* iostasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iostasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DAC7E124BE105B00A389D6 /* iostasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iostasksUITests.swift; sourceTree = "<group>"; };
 		C4DAC7E324BE105B00A389D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4DAC7EF24BE172F00A389D6 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		C4DAC7F124BE174300A389D6 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				C4DAC7C824BE105B00A389D6 /* Assets.xcassets */,
 				C4DAC7CA24BE105B00A389D6 /* LaunchScreen.storyboard */,
 				C4DAC7CD24BE105B00A389D6 /* Info.plist */,
+				C4DAC7EF24BE172F00A389D6 /* EntryViewController.swift */,
+				C4DAC7F124BE174300A389D6 /* TaskViewController.swift */,
 			);
 			path = iostasks;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4DAC7C424BE105900A389D6 /* ViewController.swift in Sources */,
+				C4DAC7F024BE172F00A389D6 /* EntryViewController.swift in Sources */,
+				C4DAC7F224BE174300A389D6 /* TaskViewController.swift in Sources */,
 				C4DAC7C024BE105900A389D6 /* AppDelegate.swift in Sources */,
 				C4DAC7C224BE105900A389D6 /* SceneDelegate.swift in Sources */,
 			);
