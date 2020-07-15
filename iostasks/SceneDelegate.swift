@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  iostasks
-//
-//  Created by derek quinn on 7/14/20.
-//  Copyright © 2020 derek quinn. All rights reserved.
-//
 
 import UIKit
 
