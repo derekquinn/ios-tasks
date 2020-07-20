@@ -27,17 +27,12 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        // instead of a database
-        // increment the count by one (more items in table view) & save task entered by user
-
-        guard let count = UserDefaults.value(forKey:"count") as? Int else { // Swift doesn't know this value can't be empty so guard against it being nil
-            return
-        }
-    
+        let count = UserDefaults.standard.integer(forKey:"count")
+        
         let newCount = count+1
         
-        UserDefaults().set(newCount, forKey: "count")
-        UserDefaults().set(text, forKey: "task_\(newCount)")
+        UserDefaults.standard.set(newCount, forKey: "count")
+        UserDefaults.standard.set(text, forKey: "task_\(newCount)")
         
         update?() // if this update function exists, call it
         

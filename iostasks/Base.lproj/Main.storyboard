@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jdz-Jl-K2L">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="zQ2-Ev-HhY">
@@ -32,10 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jdz-Jl-K2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gbh-8c-5BO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jdz-Jl-K2L" secondAttribute="trailing" id="SBD-K7-78n"/>
-                            <constraint firstItem="jdz-Jl-K2L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hQu-by-pAX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jdz-Jl-K2L" secondAttribute="bottom" id="hR5-0s-QIm"/>
+                            <constraint firstItem="jdz-Jl-K2L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9HH-a6-0VF"/>
+                            <constraint firstItem="jdz-Jl-K2L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="RNB-ug-scf"/>
+                            <constraint firstItem="jdz-Jl-K2L" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="X1m-s9-p2s"/>
+                            <constraint firstItem="jdz-Jl-K2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jFn-ch-fYL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
