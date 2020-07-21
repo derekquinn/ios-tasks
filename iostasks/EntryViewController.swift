@@ -23,16 +23,16 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     
     @objc func saveTask() {
         
-        guard let text = field.text, !text.isEmpty else{
+        guard let text = field.text, !text.isEmpty else {
             return
         }
         
         let count = UserDefaults.standard.integer(forKey:"count")
-        
-        let newCount = count+1
+        let newCount = count + 1
         
         UserDefaults.standard.set(newCount, forKey: "count")
         UserDefaults.standard.set(text, forKey: "task_\(newCount)")
+        print("save as task_\(newCount)")
         
         update?() // if this update function exists, call it
         

@@ -26,28 +26,6 @@ class ViewController: UIViewController {
         
         
     }
-    // swipe to delete
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        
-        if editingStyle == .delete{
-            
-            var newCount = tasks.count
-            newCount = newCount-1
-            
-            let index = indexPath.row
-            
-            tasks.remove(at: indexPath.row)
-            
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            UserDefaults.standard.set(newCount, forKey: "count")
-            UserDefaults.standard.removeObject(forKey: "task_\(index)")
-        }
-        
-        
-        
-    }
     
     func updateTasks(){
         print("updateTasks()")
@@ -94,8 +72,31 @@ extension ViewController: UITableViewDelegate {
         vc.task = tasks[indexPath.row]
         vc.currentPosition = indexPath.row
         vc.count = tasks.count
-        //print ("Selected \(vc.task)")
+        
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    // swipe to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            let index = indexPath.row
+            // remove task from array at index
+            tasks.remove(at: indexPath.row)
+            // remove task from tableView
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            // remove object (row) from UserDefaults.standard
+            UserDefaults.standard.removeObject(forKey: "task_\(index)")
+            // update User Defaults count
+            let newCount = tasks.count
+            UserDefaults.standard.set(newCount, forKey: "count")
+            // tableView reload
+            self.tableView.reloadData()
+        }
     }
 }
 
