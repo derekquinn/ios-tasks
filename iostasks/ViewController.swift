@@ -12,16 +12,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateTasks()
         // Extract to constant
-        self.title = "Tasks"
+        self.title = Constant.titleTasks
         tableView.delegate = self
         tableView.dataSource = self 
         // Get all currently saved tasks
         // Saving setup
         
-        if !UserDefaults.standard.bool(forKey:"setup"){
+        if !UserDefaults.standard.bool(forKey: Constant.setup){
             
-            UserDefaults.standard.set(true, forKey:"setup")
-            UserDefaults.standard.set(0, forKey: "count")
+            UserDefaults.standard.set(true, forKey: Constant.setup)
+            UserDefaults.standard.set(0, forKey: Constant.count)
         }
         
         
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         print("updateTasks()")
         tasks.removeAll()
         
-        guard let count = UserDefaults.standard.value(forKey: "count") as? Int else {
+        guard let count = UserDefaults.standard.value(forKey: Constant.count) as? Int else {
             return
         }
         // count is inclusive
@@ -45,9 +45,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapAdd(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "entry") as! EntryViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constant.entryIdentifier) as! EntryViewController
         // Extract to constant
-        vc.title = "New Task"
+        vc.title = Constant.titleNewTask
         
         //reload the table view when add tasks
         vc.update = {
@@ -66,9 +66,9 @@ extension ViewController: UITableViewDelegate {
     func tableView (_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "task") as! TaskViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constant.taskIdentifier) as! TaskViewController
         // Extract to constant
-        vc.title = "Update / Delete Task"
+        vc.title = Constant.titleStoryboard
         vc.task = tasks[indexPath.row]
         vc.currentPosition = indexPath.row
         vc.count = tasks.count
@@ -93,7 +93,7 @@ extension ViewController: UITableViewDelegate {
             UserDefaults.standard.removeObject(forKey: "task_\(index)")
             // update User Defaults count
             let newCount = tasks.count
-            UserDefaults.standard.set(newCount, forKey: "count")
+            UserDefaults.standard.set(newCount, forKey: Constant.count)
             // tableView reload
             self.tableView.reloadData()
         }
@@ -108,7 +108,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // DQueue the cell ?
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cell, for: indexPath)
         
         cell.textLabel?.text = tasks[indexPath.row]
         

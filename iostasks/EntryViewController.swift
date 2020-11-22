@@ -12,7 +12,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         field.delegate = self
         
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveTask))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constant.titleSave, style: .done, target: self, action: #selector(saveTask))
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -27,10 +27,10 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let count = UserDefaults.standard.integer(forKey:"count")
+        let count = UserDefaults.standard.integer(forKey:Constant.count)
         let newCount = count + 1
         
-        UserDefaults.standard.set(newCount, forKey: "count")
+        UserDefaults.standard.set(newCount, forKey: Constant.count)
         UserDefaults.standard.set(text, forKey: "task_\(newCount)")
         print("save as task_\(newCount)")
         
@@ -40,5 +40,5 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         navigationController?.popViewController(animated: true)
         
     }
-
+    
 }
